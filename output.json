@@ -1,0 +1,327 @@
+[
+  {
+    "document_details": {
+      "document_source": "Statement of Facts (SOF)",
+      "date_of_document": "18-Aug-2025",
+      "port_name": "Port of Mumbai, India",
+      "vessel_name": "MV Sea Voyager",
+      "voyage_number": "SV-2025-08A",
+      "parties": {
+        "shipowner_name": "Oceanic Marine Group",
+        "charterer_name": "Global Commodities Trading",
+        "port_agent_name": "Mumbai Port Services Ltd.",
+        "confidence": 1.0
+      },
+      "cargo": {
+        "operation_type": "Discharge",
+        "cargo_type": "Bulk Raw Sugar",
+        "quantity": 52000.0,
+        "unit": "Metric Tons",
+        "confidence": 1.0
+      },
+      "confidence": 1.0
+    },
+    "events": [
+      {
+        "event_id": 1,
+        "event_type": "Vessel arrived at anchorage",
+        "start_date": "15-Aug-2025",
+        "start_time": "08:00",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Clear skies, calm seas, wind SW Force 2.",
+        "remarks": "Vessel arrived at Mumbai outer anchorage.",
+        "confidence": 1.0
+      },
+      {
+        "event_id": 2,
+        "event_type": "Notice of Readiness (NOR) tendered",
+        "start_date": "15-Aug-2025",
+        "start_time": "09:30",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Clear skies, calm seas, wind SW Force 2.",
+        "remarks": null,
+        "confidence": 1.0
+      },
+      {
+        "event_id": 3,
+        "event_type": "Free Pratique granted",
+        "start_date": "15-Aug-2025",
+        "start_time": "14:00",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Clear skies, calm seas, wind SW Force 2.",
+        "remarks": "Granted by port health authorities.",
+        "confidence": 1.0
+      },
+      {
+        "event_id": 4,
+        "event_type": "Customs inspection completed",
+        "start_date": "15-Aug-2025",
+        "start_time": null,
+        "end_date": "15-Aug-2025",
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Clear skies, calm seas, wind SW Force 2.",
+        "remarks": "Completed at anchorage without any delays to the vessel's schedule.",
+        "confidence": 1.0
+      },
+      {
+        "event_id": 5,
+        "event_type": "Pilot on board",
+        "start_date": "16-Aug-2025",
+        "start_time": "06:00",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Overcast, slight sea swell.",
+        "remarks": "For berthing.",
+        "confidence": 1.0
+      },
+      {
+        "event_id": 6,
+        "event_type": "Tug assistance started",
+        "start_date": "16-Aug-2025",
+        "start_time": "08:45",
+        "end_date": "16-Aug-2025",
+        "end_time": "10:00",
+        "duration_hours": 1.25,
+        "weather_conditions": "Overcast, slight sea swell.",
+        "remarks": "Tugs 'Trishul' and 'Vikrant' for berthing assistance.",
+        "confidence": 1.0
+      },
+      {
+        "event_id": 7,
+        "event_type": "First line ashore",
+        "start_date": "16-Aug-2025",
+        "start_time": "09:15",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Overcast, slight sea swell.",
+        "remarks": "At Berth 8, Indira Docks.",
+        "confidence": 1.0
+      },
+      {
+        "event_id": 8,
+        "event_type": "All fast alongside",
+        "start_date": "16-Aug-2025",
+        "start_time": "09:45",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Overcast, slight sea swell.",
+        "remarks": null,
+        "confidence": 1.0
+      },
+      {
+        "event_id": 9,
+        "event_type": "Initial draft survey commenced",
+        "start_date": "16-Aug-2025",
+        "start_time": "11:00",
+        "end_date": "16-Aug-2025",
+        "end_time": "12:30",
+        "duration_hours": 1.5,
+        "weather_conditions": "Overcast, slight sea swell.",
+        "remarks": null,
+        "confidence": 1.0
+      },
+      {
+        "event_id": 10,
+        "event_type": "Initial draft survey completed",
+        "start_date": "16-Aug-2025",
+        "start_time": "12:30",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Overcast, slight sea swell.",
+        "remarks": null,
+        "confidence": 1.0
+      },
+      {
+        "event_id": 11,
+        "event_type": "Cargo discharge commenced",
+        "start_date": "16-Aug-2025",
+        "start_time": "13:00",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Overcast, slight sea swell.",
+        "remarks": null,
+        "confidence": 1.0
+      },
+      {
+        "event_id": 12,
+        "event_type": "Discharge stopped",
+        "start_date": "16-Aug-2025",
+        "start_time": "18:00",
+        "end_date": "16-Aug-2025",
+        "end_time": "21:00",
+        "duration_hours": 3.0,
+        "weather_conditions": "Heavy monsoon rains.",
+        "remarks": "Stoppage due to heavy rain. (Delay 1)",
+        "confidence": 1.0
+      },
+      {
+        "event_id": 13,
+        "event_type": "Cargo discharge resumed",
+        "start_date": "16-Aug-2025",
+        "start_time": "21:00",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Heavy monsoon rains (ending).",
+        "remarks": null,
+        "confidence": 1.0
+      },
+      {
+        "event_id": 14,
+        "event_type": "Cargo discharge ongoing",
+        "start_date": "17-Aug-2025",
+        "start_time": "08:00",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Intermittent light showers, wind W Force 3. Not affecting operations.",
+        "remarks": "Proceeding with 3 shore cranes.",
+        "confidence": 1.0
+      },
+      {
+        "event_id": 15,
+        "event_type": "Discharge stopped",
+        "start_date": "17-Aug-2025",
+        "start_time": "14:00",
+        "end_date": "17-Aug-2025",
+        "end_time": "16:30",
+        "duration_hours": 2.5,
+        "weather_conditions": "Intermittent light showers, wind W Force 3. Not affecting operations.",
+        "remarks": "Stoppage due to shore crane #2 breakdown. (Delay 2)",
+        "confidence": 1.0
+      },
+      {
+        "event_id": 16,
+        "event_type": "Cargo discharge resumed",
+        "start_date": "17-Aug-2025",
+        "start_time": "16:30",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Intermittent light showers, wind W Force 3. Not affecting operations.",
+        "remarks": "Crane #2 repaired. Resumed with 3 cranes.",
+        "confidence": 1.0
+      },
+      {
+        "event_id": 17,
+        "event_type": "Cargo discharge completed",
+        "start_date": "18-Aug-2025",
+        "start_time": "09:00",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Clear, good visibility.",
+        "remarks": null,
+        "confidence": 1.0
+      },
+      {
+        "event_id": 18,
+        "event_type": "Final draft survey commenced",
+        "start_date": "18-Aug-2025",
+        "start_time": "09:30",
+        "end_date": "18-Aug-2025",
+        "end_time": "11:00",
+        "duration_hours": 1.5,
+        "weather_conditions": "Clear, good visibility.",
+        "remarks": null,
+        "confidence": 1.0
+      },
+      {
+        "event_id": 19,
+        "event_type": "Final draft survey completed",
+        "start_date": "18-Aug-2025",
+        "start_time": "11:00",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Clear, good visibility.",
+        "remarks": null,
+        "confidence": 1.0
+      },
+      {
+        "event_id": 20,
+        "event_type": "Pilot on board",
+        "start_date": "18-Aug-2025",
+        "start_time": "12:00",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Clear, good visibility.",
+        "remarks": "For departure.",
+        "confidence": 1.0
+      },
+      {
+        "event_id": 21,
+        "event_type": "Tug assistance started",
+        "start_date": "18-Aug-2025",
+        "start_time": "12:15",
+        "end_date": "18-Aug-2025",
+        "end_time": "13:00",
+        "duration_hours": 0.75,
+        "weather_conditions": "Clear, good visibility.",
+        "remarks": "Tug 'Trishul' for unberthing assistance.",
+        "confidence": 1.0
+      },
+      {
+        "event_id": 22,
+        "event_type": "Last line cast off",
+        "start_date": "18-Aug-2025",
+        "start_time": "12:30",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Clear, good visibility.",
+        "remarks": null,
+        "confidence": 1.0
+      },
+      {
+        "event_id": 23,
+        "event_type": "Vessel departed",
+        "start_date": "18-Aug-2025",
+        "start_time": "15:00",
+        "end_date": null,
+        "end_time": null,
+        "duration_hours": null,
+        "weather_conditions": "Clear, good visibility.",
+        "remarks": "Vessel dropped pilot and departed port limits.",
+        "confidence": 1.0
+      }
+    ],
+    "laytime_notes": {
+      "free_time_periods_identified": "Customs inspection completed at anchorage on 15-Aug-2025 without any delays to the vessel's schedule.",
+      "suspension_periods_identified": "Delay 1 (16-Aug-2025): 3 hours and 0 minutes (18:00 - 21:00) due to heavy rain. Delay 2 (17-Aug-2025): 2 hours and 30 minutes (14:00 - 16:30) due to shore crane #2 mechanical failure.",
+      "remarks_on_interruptions_or_delays": "Heavy monsoon rains from 18:00 to 21:00 on 16-Aug-2025 caused stoppage of cargo operations. Crane #2 breakdown from 14:00 to 16:30 on 17-Aug-2025.",
+      "confidence": 1.0
+    },
+    "approvals": [
+      {
+        "role": "Master, MV Sea Voyager",
+        "name": null,
+        "date_signed": "18-Aug-2025"
+      },
+      {
+        "role": "Charterer's Representative",
+        "name": null,
+        "date_signed": "18-Aug-2025"
+      },
+      {
+        "role": "Port Agent",
+        "name": null,
+        "date_signed": "18-Aug-2025"
+      }
+    ],
+    "fileName": "SOF_datafile_example_no_2.pdf"
+  }
+]

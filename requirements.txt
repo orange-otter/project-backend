@@ -1,0 +1,15 @@
+# requirements.txt
+
+# LlamaParse for document parsing
+llama-parse>=0.4.0
+
+# Google Generative AI SDK
+google-genai>=0.2.0
+
+# Pydantic for schema validation
+pydantic>=2.7.0
+
+# python-dotenv to load environment variables
+python-dotenv>=1.0.1
+
+# pip install -r requirements.txt
