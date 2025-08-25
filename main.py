@@ -8,6 +8,8 @@ from typing import List
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, UploadFile, File, HTTPException, BackgroundTasks
+# Add this import for CORS
+from fastapi.middleware.cors import CORSMiddleware
 
 from document_parser import extract_text_from_document
 from processor import get_structured_data
@@ -17,6 +19,17 @@ load_dotenv()
 
 # Initialize FastAPI application
 app = FastAPI()
+
+# --- Add this entire block for CORS ---
+# This allows your frontend (from any origin "*") to make requests to your backend.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allows all headers
+)
+# ------------------------------------
 
 
 def clear_output_file(file_path: str = "output.json"):
@@ -78,11 +91,9 @@ async def process_uploaded_files(
             if os.path.exists(file_path):
                 os.remove(file_path)
 
-    # Save the final aggregated output to a JSON file
     with open("output.json", "w", encoding="utf-8") as f:
         json.dump(all_detailed_data, f, indent=2, ensure_ascii=False)
 
-    # **Schedule the output.json file to be cleared after the response is sent**
     background_tasks.add_task(clear_output_file)
 
     return all_detailed_data
