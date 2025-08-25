@@ -1,16 +1,14 @@
-# backend/main.py
+# main.py
 
 import os
 import json
 import shutil
-from dotenv import load_dotenv
-from fastapi import FastAPI, UploadFile, File, HTTPException
-from typing import List
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
 import traceback
+from typing import List
 
-# CORRECTED IMPORT: Import directly from sibling files in the 'backend' directory
+from dotenv import load_dotenv
+from fastapi import FastAPI, UploadFile, File, HTTPException, BackgroundTasks
+
 from document_parser import extract_text_from_document
 from processor import get_structured_data
 
@@ -20,36 +18,37 @@ load_dotenv()
 # Initialize FastAPI application
 app = FastAPI()
 
-# CORRECTED PATH: Point to the sibling 'frontend' directory
-# The path "../frontend" means "go up one level from where this script is, then go into frontend"
-app.mount("/static", StaticFiles(directory="../frontend"), name="static")
+
+def clear_output_file(file_path: str = "output.json"):
+    """
+    Clears the content of the specified file for privacy.
+    It writes an empty JSON array to the file.
+    """
+    try:
+        with open(file_path, "w", encoding="utf-8") as f:
+            f.write("[]")  # Write an empty JSON array to clear the file
+        print(f"--- ✅ Privacy cleanup: Cleared {file_path} ---")
+    except Exception as e:
+        print(f"--- ❌ ERROR: Failed to clear {file_path}. Reason: {e} ---")
 
 
-# --- API Routes to Serve HTML Pages ---
+# --- Root Endpoint ---
 @app.get("/")
-async def serve_index():
-    # This path is correct because it's relative to the 'backend' folder
-    return FileResponse('../frontend/index.html')
-
-
-@app.get("/upload")
-async def serve_upload_page():
-    return FileResponse('../frontend/upload.html')
-
-
-@app.get("/data")
-async def serve_data_page():
-    return FileResponse('../frontend/data.html')
+async def root():
+    """Confirms that the server is running."""
+    return {"message": "Server is running"}
 
 
 # --- API Endpoint to Process Uploaded Files ---
 @app.post("/process")
-async def process_uploaded_files(files: List[UploadFile] = File(...)):
+async def process_uploaded_files(
+    background_tasks: BackgroundTasks,
+    files: List[UploadFile] = File(...)
+):
     """
-    Receives files, saves them, runs the processing pipeline, and returns the
-    FULL, detailed JSON response.
+    Receives files, processes them, returns the structured JSON data,
+    and clears the output file in the background for privacy.
     """
-    # This will create an 'uploads' folder inside your 'backend' directory
     uploads_dir = "uploads"
     os.makedirs(uploads_dir, exist_ok=True)
     all_detailed_data = []
@@ -69,12 +68,21 @@ async def process_uploaded_files(files: List[UploadFile] = File(...)):
         except Exception as e:
             print(f"--- ❌ PIPELINE FAILED for {file.filename} ---")
             traceback.print_exc()
-            raise HTTPException(status_code=500, detail=f"An error occurred while processing {file.filename}.")
+            raise HTTPException(
+                status_code=500,
+                detail=f"An error occurred while processing {file.filename}: {e}"
+            )
         finally:
-            file.file.close()
+            if not file.file.closed:
+                file.file.close()
+            if os.path.exists(file_path):
+                os.remove(file_path)
 
-    # This will create 'output.json' inside your 'backend' directory
+    # Save the final aggregated output to a JSON file
     with open("output.json", "w", encoding="utf-8") as f:
         json.dump(all_detailed_data, f, indent=2, ensure_ascii=False)
+
+    # **Schedule the output.json file to be cleared after the response is sent**
+    background_tasks.add_task(clear_output_file)
 
     return all_detailed_data
