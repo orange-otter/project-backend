@@ -12,4 +12,13 @@ pydantic>=2.7.0
 # python-dotenv to load environment variables
 python-dotenv>=1.0.1
 
+# FastAPI for building APIs
+fastapi>=0.111.0
+
+# Uvicorn for serving the FastAPI application
+uvicorn>=0.30.1
+
+# For parsing multipart/form-data (file uploads)
+python-multipart>=0.0.9
+
 # pip install -r requirements.txt
